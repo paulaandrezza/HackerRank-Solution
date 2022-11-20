@@ -1,17 +1,16 @@
-arr = [ [-9, -9, -9,  1, 1, 1], 
-        [ 0, -9,  0,  4, 3, 2],
-        [-9, -9, -9,  1, 2, 3],
-        [ 0,  0,  8,  6, 6, 0],
-        [ 0,  0,  0, -2, 0, 0],
-        [ 0,  0, 1,  2, 4, 0 ]] 
+n = 9
+ar = [10, 20, 20, 10, 10, 30, 50, 20]
 
-maior = -100
+dic = {}
+rep = 0
 
-for i in range(4):
-    for j in range(4):
-        s = arr[i][j] + arr[i][j+1] + arr[i][j+2] + arr[i+1][j+1] + arr[i+2][j] + arr[i+2][j+1] + arr[i+2][j+2]
-        print(s)
-        if s > maior:
-            maior = s
+for i in ar:
+    if i not in dic:
+        dic[i] = 0
+    dic[i] += 1
 
-print(maior)
+for i in dic.values():
+    if i > 1:
+        rep += int(i/2)
+
+print(rep)
